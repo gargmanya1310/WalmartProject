@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #ca7272;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background-color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Recommended Products</h1>
+    </header>
+    <main>
+        <section id="userHistory">
+            <h2>Your Purchase History</h2>
+            <ul>
+                <!-- Display user's purchase history -->
+            </ul>
+        </section>
+        <section id="recommendedProducts">
+            <h2>Recommended Products</h2>
+            <ul>
+                <!-- Display recommended products here -->
+            </ul>
+        </section>
+    </main>
+    <script>
+        // Simulated user's purchase history
+        const userPurchaseHistory = [
+            { id: 1, name: "Strawberries", image: "https://images.pexels.com/photos/46174/strawberries-berries-fruit-freshness-46174.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            { id: 2, name: "Blueberries", image: "https://images.pexels.com/photos/1395958/pexels-photo-1395958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+            // Add more purchase history items as needed
+        ];
+
+        // Simulated product recommendations based on purchase history
+        const recommendedProducts = [
+            { id: 3, name: "Cherry tomatoes", image: "https://images.pexels.com/photos/4033112/pexels-photo-4033112.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+            { id: 4, name: "Oranges", image: "https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=600" },
+            // Add more recommended products as needed
+        ];
+
+        // Function to display user's purchase history
+        function displayPurchaseHistory() {
+            const userHistorySection = document.getElementById("userHistory");
+            const purchaseHistoryList = document.createElement("ul");
+
+            userPurchaseHistory.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<img src="${item.image}" alt="${item.name}"><span>${item.name}</span>`;
+                purchaseHistoryList.appendChild(listItem);
+            });
+
+            userHistorySection.appendChild(purchaseHistoryList);
+        }
+
+        // Function to display recommended products
+        function displayRecommendedProducts() {
+            const recommendedProductsSection = document.getElementById("recommendedProducts");
+            const recommendedProductsList = document.createElement("ul");
+
+            recommendedProducts.forEach(item => {
+                const listItem = document.createElement("li");
+                listItem.innerHTML = `<img src="${item.image}" alt="${item.name}"><span>${item.name}</span>`;
+                recommendedProductsList.appendChild(listItem);
+            });
+
+            recommendedProductsSection.appendChild(recommendedProductsList);
+        }
+
+        // Call the functions to display data
+        displayPurchaseHistory();
+        displayRecommendedProducts();
+    </script>
+</body>
+</html>
